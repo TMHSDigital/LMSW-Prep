@@ -4,7 +4,7 @@
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-brightgreen)](https://tmhsdigital.github.io/LMSW-Prep/)
 [![Vanilla JS](https://img.shields.io/badge/vanilla-HTML%20%7C%20CSS%20%7C%20JS-yellow)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
-A single-page practice exam for the **New York Licensed Master Social Worker (LMSW)** exam. Questions align with ASWB Master's level content areas: Human Development, Assessment, Interventions, and Professional Ethics. No account or build step required; run locally or use the hosted version.
+A single-page practice exam for the **New York Licensed Master Social Worker (LMSW)** exam. Content is aligned with the **ASWB 2026 Master's blueprint** (Values and Ethics, Assessment and Planning, Intervention and Practice). No account or build step; run locally or use the hosted version.
 
 ---
 
@@ -16,13 +16,17 @@ A single-page practice exam for the **New York Licensed Master Social Worker (LM
 
 ## Features
 
-- **Randomized quizzes** – Each session draws 10 questions at random from a pool of 24+; answer order is shuffled so the correct option is not in a fixed position.
-- **Immediate feedback** – After selecting an answer, the correct option is highlighted in green and incorrect in red, with a short rationale.
-- **Hints** – A hint is available per question to steer thinking without giving away the answer.
-- **Progress** – Progress bar and "Question X of 10" so you know how far you are.
-- **Keep practicing** – After finishing 10 questions, use "Another 10 questions" to get a new set without leaving the page; repeat as needed.
-- **Mobile-friendly** – Layout and tap targets are sized for phones and tablets.
-- **Accessible** – Semantic HTML, ARIA where useful, keyboard and screen-reader friendly.
+- **ASWB 2026 alignment** – Weighted draw by domain (35% / 33% / 32%). Optional filter by domain. Supports 3- and 4-option questions.
+- **Quiz options** – Choose 10, 20, or 50 questions per round from the start panel.
+- **Randomized quizzes** – Questions and answer order shuffled each round.
+- **Immediate feedback** – Correct/incorrect plus rationale; optional analytic rationales per question.
+- **Hints** – One hint per question without giving away the answer.
+- **Progress** – Determinate progress bar and "Question X of N."
+- **Mastery tracking** – Session and all-time stats (by domain) in results; stored in localStorage.
+- **Keep practicing** – "Another quiz" for a new round; "Reload page" for a fresh start.
+- **Mobile-friendly** – Responsive layout, touch-friendly targets.
+- **Accessible** – Semantic HTML, ARIA live regions, focus management, fieldset/legend.
+- **PWA** – Installable and works offline (manifest + service worker).
 
 ---
 
@@ -40,11 +44,14 @@ Suitable for static hosting (e.g. GitHub Pages); open `index.html` in a browser 
 
 ```
 LMSW-Prep/
-  index.html    # Single page: quiz UI and results panel
-  style.css     # Layout, theme, responsive and state styles
-  script.js     # Quiz logic: randomization, state, rendering, scoring
-  questions.js  # Question pool (24 questions across 4 ASWB categories)
-  LICENSE       # MIT
+  index.html      # Start options, quiz UI, results panel
+  style.css       # Layout, theme, responsive, transitions
+  script.js       # Weighted draw, state, mastery (localStorage), PWA registration
+  questions.js    # Question pool (25 items, 3 domains, 3- and 4-option)
+  manifest.json   # PWA manifest
+  sw.js           # Service worker for offline cache
+  CONTRIBUTING.md # Item-writing rubric and 2026 alignment
+  LICENSE
   README.md
 ```
 
@@ -69,20 +76,19 @@ No install or build step is required.
 
 - On load (or when you click "Another 10 questions"), the app shuffles the full question pool and selects 10 without replacement. For each of those 10, the four answer choices are shuffled so the correct answer’s position is random.
 - You answer one question at a time. After you select an option, the correct and your chosen answer are styled and the rationale is shown. "Next question" (or "See results" on the last one) advances the quiz.
-- Score is computed by comparing your selected choice (by original index) to the question’s correct index. The results screen shows your score and short feedback; "Another 10 questions" starts a new random set in the same session.
+- Score is computed by comparing your selected choice (by original index) to the question’s correct index. The results screen shows your score and short feedback; "Another quiz" starts a new random set (same options) in the same session.
 
 ---
 
-## Question categories
+## Question domains (ASWB 2026)
 
 Content follows ASWB Master’s level areas:
 
-| Category             | Description |
-|----------------------|-------------|
-| Human Development    | Theories (e.g. Erikson, Piaget, attachment, moral development), culture and development |
-| Assessment           | Risk, biopsychosocial and cultural formulation, instruments, strengths, somatic presentations |
-| Interventions        | Motivational interviewing, behavioral/skills work, crisis, trauma-informed care, contracts, family systems |
-| Professional Ethics | NASW Code, informed consent, documentation, dual relationships, termination, confidentiality |
+| Domain                     | Weight | Description |
+|----------------------------|--------|-------------|
+| Values and Ethics         | 35%    | Legal/ethical standards, social justice, anti-oppressive practice, self-determination |
+| Assessment and Planning   | 33%    | Biopsychosocial and cultural formulation, risk assessment, collaborative goal setting |
+| Intervention and Practice | 32%    | Evidence-based interventions, case management, practice evaluation |
 
 ---
 

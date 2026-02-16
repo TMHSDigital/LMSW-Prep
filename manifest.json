@@ -1,0 +1,11 @@
+{
+  "name": "New York LMSW Practice Exam",
+  "short_name": "LMSW Prep",
+  "description": "Practice exam for the New York Licensed Master Social Worker exam. ASWB 2026 blueprint.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#fafafa",
+  "theme_color": "#1976d2",
+  "icons": []
+}

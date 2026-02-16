@@ -3,17 +3,38 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#1976d2" />
     <title>New York LMSW Practice Exam</title>
+    <link rel="manifest" href="manifest.json" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <main class="container" role="main">
       <header class="header">
         <h1>New York LMSW Practice Exam</h1>
-        <p class="subtitle">Master's level • 10 questions per quiz</p>
+        <p class="subtitle">Master's level • ASWB 2026 blueprint</p>
       </header>
 
-      <section id="quiz-panel" class="quiz-panel" aria-label="Quiz">
+      <section id="start-panel" class="start-panel" aria-label="Quiz options">
+        <h2 class="start-heading">Quiz options</h2>
+        <div class="start-options">
+          <label class="start-label">Questions per round</label>
+          <select id="set-size" class="start-select" aria-label="Number of questions per round">
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="50">50</option>
+          </select>
+          <fieldset class="domain-filter">
+            <legend class="start-legend">Domains (leave all checked for weighted mix)</legend>
+            <label class="checkbox-label"><input type="checkbox" id="domain-ethics" value="Values and Ethics" checked> Values and Ethics</label>
+            <label class="checkbox-label"><input type="checkbox" id="domain-assessment" value="Assessment and Planning" checked> Assessment and Planning</label>
+            <label class="checkbox-label"><input type="checkbox" id="domain-intervention" value="Intervention and Practice" checked> Intervention and Practice</label>
+          </fieldset>
+        </div>
+        <button type="button" class="btn btn-primary btn-start" id="start-btn">Start quiz</button>
+      </section>
+
+      <section id="quiz-panel" class="quiz-panel" aria-label="Quiz" hidden>
         <div class="progress-section" aria-live="polite">
           <p class="progress-text" id="progress-text">Question 1 of 10</p>
           <div class="progress-bar-wrap" role="presentation">
@@ -29,7 +50,10 @@
           <p class="question-text" id="question-text"></p>
         </div>
 
-        <ul class="answer-list" id="answer-list" role="group" aria-label="Answer choices"></ul>
+        <fieldset class="answer-fieldset" aria-label="Choose one answer">
+          <legend class="sr-only">Choose one answer</legend>
+          <ul class="answer-list" id="answer-list" role="group" aria-label="Answer choices"></ul>
+        </fieldset>
 
         <div class="action-row">
           <button type="button" class="btn btn-hint" id="hint-btn">Hint</button>
@@ -41,12 +65,15 @@
         <div
           class="rationale-block"
           id="rationale-block"
+          role="status"
           aria-live="polite"
           aria-atomic="true"
+          tabindex="-1"
           hidden
         >
           <h3 class="rationale-heading" id="rationale-heading">Rationale</h3>
           <p class="rationale-text" id="rationale-text"></p>
+          <div class="distractor-rationales" id="distractor-rationales"></div>
         </div>
       </section>
 
@@ -54,8 +81,10 @@
         <h2>Quiz complete</h2>
         <p class="score-display" id="score-display"></p>
         <p class="score-message" id="score-message"></p>
+        <p class="session-count" id="session-count"></p>
+        <p class="stats-display" id="stats-display"></p>
         <div class="results-actions">
-          <button type="button" class="btn btn-primary" id="another-btn">Another 10 questions</button>
+          <button type="button" class="btn btn-primary" id="another-btn">Another quiz</button>
           <button type="button" class="btn btn-secondary" id="retake-btn">Reload page</button>
         </div>
       </section>

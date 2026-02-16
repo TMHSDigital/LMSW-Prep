@@ -1,12 +1,22 @@
 /**
  * LMSW Practice Exam Question Pool
- * ASWB Master's level categories: Human Development, Assessment, Interventions, Professional Ethics
+ * ASWB 2026 Master's blueprint: three domains with weights
+ *   Values and Ethics 35% | Assessment and Planning 33% | Intervention and Practice 32%
+ * Legacy mapping: Human Development + Professional Ethics -> Values and Ethics (or split);
+ *   Assessment -> Assessment and Planning; Interventions -> Intervention and Practice.
  */
+var DOMAIN_WEIGHTS = {
+  "Values and Ethics": 0.35,
+  "Assessment and Planning": 0.33,
+  "Intervention and Practice": 0.32,
+};
+
 const QUESTIONS = [
-  // Human Development (6)
+  // Human Development -> Assessment and Planning (developmental theory)
   {
     id: 1,
     category: "Human Development",
+    domain: "Values and Ethics",
     question:
       "According to Erikson's psychosocial theory, the primary developmental task of adolescence is resolution of which conflict?",
     choices: [
@@ -23,6 +33,7 @@ const QUESTIONS = [
   {
     id: 2,
     category: "Human Development",
+    domain: "Assessment and Planning",
     question:
       "A 7-year-old consistently blames others for their mistakes and has difficulty understanding how their actions affect peers. This most closely reflects a delay in:",
     choices: [
@@ -39,6 +50,7 @@ const QUESTIONS = [
   {
     id: 3,
     category: "Human Development",
+    domain: "Assessment and Planning",
     question:
       "In Piaget's theory, a child who can solve conservation tasks but cannot yet reason about abstract hypothetical situations is likely in which stage?",
     choices: [
@@ -55,6 +67,7 @@ const QUESTIONS = [
   {
     id: 4,
     category: "Human Development",
+    domain: "Intervention and Practice",
     question:
       "Which attachment pattern in infancy is most associated with later difficulty in emotional regulation and relationship stability?",
     choices: [
@@ -71,6 +84,7 @@ const QUESTIONS = [
   {
     id: 5,
     category: "Human Development",
+    domain: "Values and Ethics",
     question:
       "Kohlberg's conventional level of moral development is best characterized by:",
     choices: [
@@ -87,6 +101,7 @@ const QUESTIONS = [
   {
     id: 6,
     category: "Human Development",
+    domain: "Assessment and Planning",
     question:
       "A social worker is considering how culture shapes the expression of autonomy in teens. This reflects attention to:",
     choices: [
@@ -100,10 +115,11 @@ const QUESTIONS = [
       "Development is influenced by cultural context; norms for autonomy, independence, and family roles vary across cultures. Considering culture avoids ethnocentric application of stage theories.",
     hint: "Development is not the same in every culture; context matters.",
   },
-  // Assessment (6)
+  // Assessment -> Assessment and Planning
   {
     id: 7,
     category: "Assessment",
+    domain: "Assessment and Planning",
     question:
       "When conducting a risk assessment for self-harm, the social worker should prioritize:",
     choices: [
@@ -120,6 +136,7 @@ const QUESTIONS = [
   {
     id: 8,
     category: "Assessment",
+    domain: "Assessment and Planning",
     question:
       "A biopsychosocial assessment typically includes all of the following EXCEPT:",
     choices: [
@@ -136,6 +153,7 @@ const QUESTIONS = [
   {
     id: 9,
     category: "Assessment",
+    domain: "Assessment and Planning",
     question:
       "Cultural formulation in assessment is used primarily to:",
     choices: [
@@ -152,6 +170,7 @@ const QUESTIONS = [
   {
     id: 10,
     category: "Assessment",
+    domain: "Assessment and Planning",
     question:
       "Which is the best practice when using standardized instruments with diverse clients?",
     choices: [
@@ -168,6 +187,7 @@ const QUESTIONS = [
   {
     id: 11,
     category: "Assessment",
+    domain: "Intervention and Practice",
     question:
       "Documenting a client's strengths in an assessment is important because it:",
     choices: [
@@ -184,6 +204,7 @@ const QUESTIONS = [
   {
     id: 12,
     category: "Assessment",
+    domain: "Assessment and Planning",
     question:
       "When a client presents with vague somatic complaints and the social worker suspects underlying depression, the most appropriate next step is:",
     choices: [
@@ -197,10 +218,11 @@ const QUESTIONS = [
       "Somatic symptoms can mask depression, especially in some cultural contexts. A full psychosocial and mental health assessment is needed, with medical referral when indicated to rule out organic causes.",
     hint: "Both mental health and possible medical causes need to be considered.",
   },
-  // Interventions (6)
+  // Interventions -> Intervention and Practice
   {
     id: 13,
     category: "Interventions",
+    domain: "Intervention and Practice",
     question:
       "Motivational interviewing is best characterized as:",
     choices: [
@@ -217,6 +239,7 @@ const QUESTIONS = [
   {
     id: 14,
     category: "Interventions",
+    domain: "Intervention and Practice",
     question:
       "A social worker uses role-play in session to practice saying 'no' to a demanding family member. This is most consistent with:",
     choices: [
@@ -233,6 +256,7 @@ const QUESTIONS = [
   {
     id: 15,
     category: "Interventions",
+    domain: "Intervention and Practice",
     question:
       "Crisis intervention typically focuses on:",
     choices: [
@@ -249,6 +273,7 @@ const QUESTIONS = [
   {
     id: 16,
     category: "Interventions",
+    domain: "Intervention and Practice",
     question:
       "When using a trauma-informed approach, the social worker should:",
     choices: [
@@ -265,6 +290,7 @@ const QUESTIONS = [
   {
     id: 17,
     category: "Interventions",
+    domain: "Intervention and Practice",
     question:
       "A contract in social work practice is used to:",
     choices: [
@@ -281,6 +307,7 @@ const QUESTIONS = [
   {
     id: 18,
     category: "Interventions",
+    domain: "Intervention and Practice",
     question:
       "Systemic family therapy is distinguished by its emphasis on:",
     choices: [
@@ -294,10 +321,11 @@ const QUESTIONS = [
       "Systemic family therapy views problems in the context of family structure, boundaries, and interaction patterns rather than locating pathology only in one member.",
     hint: "The word 'systemic' points to what level of focus?",
   },
-  // Professional Ethics (6)
+  // Professional Ethics -> Values and Ethics
   {
     id: 19,
     category: "Professional Ethics",
+    domain: "Values and Ethics",
     question:
       "According to the NASW Code of Ethics, a social worker's primary responsibility is to:",
     choices: [
@@ -310,10 +338,17 @@ const QUESTIONS = [
     rationale:
       "The NASW Code of Ethics states that the social worker's primary responsibility is to the client, while also acknowledging responsibilities to the broader society, the profession, and other contexts.",
     hint: "The Code specifies one primary fiduciary relationship.",
+    distractorRationales: [
+      "The employing organization is important but secondary to the client's welfare.",
+      null,
+      "The referral source has a role in the process but is not the primary responsibility.",
+      "Third-party payers fund services but the social worker's primary duty is to the client.",
+    ],
   },
   {
     id: 20,
     category: "Professional Ethics",
+    domain: "Values and Ethics",
     question:
       "Informed consent for treatment should include:",
     choices: [
@@ -330,6 +365,7 @@ const QUESTIONS = [
   {
     id: 21,
     category: "Professional Ethics",
+    domain: "Values and Ethics",
     question:
       "A client asks the social worker to not document their substance use in the record. The social worker should:",
     choices: [
@@ -346,6 +382,7 @@ const QUESTIONS = [
   {
     id: 22,
     category: "Professional Ethics",
+    domain: "Values and Ethics",
     question:
       "Dual or multiple relationships are of concern because they:",
     choices: [
@@ -362,6 +399,7 @@ const QUESTIONS = [
   {
     id: 23,
     category: "Professional Ethics",
+    domain: "Values and Ethics",
     question:
       "When terminating services, the social worker should:",
     choices: [
@@ -378,6 +416,7 @@ const QUESTIONS = [
   {
     id: 24,
     category: "Professional Ethics",
+    domain: "Values and Ethics",
     question:
       "Confidentiality may be breached without client consent when:",
     choices: [
@@ -390,5 +429,27 @@ const QUESTIONS = [
     rationale:
       "Exceptions to confidentiality include imminent risk of harm to self or others, certain mandatory reporting situations (e.g., child/elder abuse as defined by law), and when required by law or court order—not merely agency policy or convenience.",
     hint: "Think about situations involving serious danger or legal mandate.",
+  },
+  // Sample 3-option item (ASWB 2026 format)
+  {
+    id: 25,
+    category: "Values and Ethics",
+    domain: "Values and Ethics",
+    question:
+      "A social worker learns a client is planning to leave an abusive partner. The client asks the worker not to document the plan in the record. What should the social worker do FIRST?",
+    choices: [
+      "Explain the purpose of documentation and limits of confidentiality, then document in accordance with professional standards",
+      "Agree not to document to maintain the therapeutic alliance",
+      "Refuse to continue services until the client consents to documentation",
+    ],
+    correctIndex: 0,
+    rationale:
+      "The social worker should explain why documentation is important for continuity and safety, and the limits of confidentiality, then document according to professional and legal standards rather than omitting clinically relevant information at the client's request without a legal basis.",
+    hint: "Consider balancing the client's request with professional standards and safety.",
+    distractorRationales: [
+      null,
+      "Agreeing not to document undermines continuity and safety and does not align with professional standards.",
+      "Refusing to continue services is disproportionate; the worker should explain and document appropriately rather than terminate.",
+    ],
   },
 ];
