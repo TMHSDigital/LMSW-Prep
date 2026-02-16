@@ -101,8 +101,12 @@
   var startPanel = document.getElementById("start-panel");
   var startBtn = document.getElementById("start-btn");
   var setSizeEl = document.getElementById("set-size");
+  var poolProgressEl = document.getElementById("pool-progress");
   var statsDisplay = document.getElementById("stats-display");
   var sessionCountEl = document.getElementById("session-count");
+
+  var POOL_SIZE_TARGET = 500;
+  var SET_SIZE_OPTIONS = [5, 10, 15, 20, 25, 30, 40, 50];
 
   var STATS_KEY = "lmsw_prep_stats";
 
@@ -143,24 +147,85 @@
     return out.length === 3 ? null : out;
   }
 
+  function getAvailablePoolCount() {
+    var pool = typeof QUESTIONS !== "undefined" ? QUESTIONS : [];
+    var domains = getSelectedDomains();
+    if (!domains || domains.length === 0) return pool.length;
+    return pool.filter(function (q) {
+      return domains.indexOf(getDomain(q)) !== -1;
+    }).length;
+  }
+
+  function updateSetSizeOptions(availableCount) {
+    if (!setSizeEl) return;
+    setSizeEl.innerHTML = "";
+    if (availableCount === 0) {
+      var opt = document.createElement("option");
+      opt.value = "0";
+      opt.textContent = "0 (select at least one domain)";
+      setSizeEl.appendChild(opt);
+      return;
+    }
+    var added = {};
+    SET_SIZE_OPTIONS.forEach(function (n) {
+      if (n <= availableCount && !added[n]) {
+        added[n] = true;
+        var opt = document.createElement("option");
+        opt.value = String(n);
+        opt.textContent = String(n);
+        setSizeEl.appendChild(opt);
+      }
+    });
+    if (availableCount > 0 && SET_SIZE_OPTIONS.indexOf(availableCount) === -1 && !added[availableCount]) {
+      var allOpt = document.createElement("option");
+      allOpt.value = String(availableCount);
+      allOpt.textContent = "All (" + availableCount + ")";
+      setSizeEl.appendChild(allOpt);
+    }
+    var sel = Math.min(10, availableCount);
+    if (availableCount >= 10) setSizeEl.value = "10";
+    else if (availableCount >= 5) setSizeEl.value = "5";
+    else setSizeEl.value = String(availableCount);
+  }
+
+  function updatePoolProgress(availableCount) {
+    if (!poolProgressEl) return;
+    var totalPool = typeof QUESTIONS !== "undefined" ? QUESTIONS.length : 0;
+    if (totalPool === 0) {
+      poolProgressEl.textContent = "";
+      return;
+    }
+    if (totalPool < POOL_SIZE_TARGET) {
+      poolProgressEl.textContent = totalPool + " / " + POOL_SIZE_TARGET + " questions in pool. Contribute on GitHub.";
+    } else {
+      poolProgressEl.textContent = totalPool + " questions in pool.";
+    }
+    if (availableCount !== totalPool && availableCount > 0) {
+      poolProgressEl.textContent = poolProgressEl.textContent + " (" + availableCount + " for selected domains)";
+    }
+  }
+
+  function refreshStartPanel() {
+    var n = getAvailablePoolCount();
+    updateSetSizeOptions(n);
+    updatePoolProgress(n);
+  }
+
   function initQuiz() {
     if (setSizeEl) questionsPerRound = Math.max(1, parseInt(setSizeEl.value, 10) || 10);
     selectedDomains = getSelectedDomains();
 
     var pool = typeof QUESTIONS !== "undefined" ? QUESTIONS : [];
-    var total = questionsPerRound;
-    if (pool.length < total) {
-      progressText.textContent = "Not enough questions in pool.";
-      return;
-    }
     var filtered = selectedDomains && selectedDomains.length > 0
       ? pool.filter(function (q) {
           return selectedDomains.indexOf(getDomain(q)) !== -1;
         })
       : pool;
-    if (filtered.length < total) {
-      total = Math.min(total, filtered.length);
+    if (filtered.length === 0) {
+      if (poolProgressEl) poolProgressEl.textContent = "No questions match the selected domains. Select at least one domain.";
+      return;
     }
+    var total = Math.min(questionsPerRound, filtered.length);
     var chosen = selectedDomains && selectedDomains.length > 0
       ? pickRandomQuestions(filtered, total)
       : pickWeightedQuestions(pool, total, null);
@@ -361,18 +426,22 @@
     });
   }
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", function () {
-      if (quizPanel) quizPanel.hidden = true;
-      if (resultsPanel) resultsPanel.hidden = true;
-      if (startPanel) startPanel.hidden = false;
-      registerServiceWorker();
-    });
-  } else {
+  function onDomReady() {
     if (quizPanel) quizPanel.hidden = true;
     if (resultsPanel) resultsPanel.hidden = true;
     if (startPanel) startPanel.hidden = false;
+    refreshStartPanel();
+    ["domain-ethics", "domain-assessment", "domain-intervention"].forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) el.addEventListener("change", refreshStartPanel);
+    });
     registerServiceWorker();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", onDomReady);
+  } else {
+    onDomReady();
   }
 
   function registerServiceWorker() {

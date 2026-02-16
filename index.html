@@ -17,13 +17,10 @@
 
       <section id="start-panel" class="start-panel" aria-label="Quiz options">
         <h2 class="start-heading">Quiz options</h2>
+        <p class="pool-progress" id="pool-progress" aria-live="polite"></p>
         <div class="start-options">
           <label class="start-label">Questions per round</label>
-          <select id="set-size" class="start-select" aria-label="Number of questions per round">
-            <option value="10">10</option>
-            <option value="20">20</option>
-            <option value="50">50</option>
-          </select>
+          <select id="set-size" class="start-select" aria-label="Number of questions per round"></select>
           <fieldset class="domain-filter">
             <legend class="start-legend">Domains (leave all checked for weighted mix)</legend>
             <label class="checkbox-label"><input type="checkbox" id="domain-ethics" value="Values and Ethics" checked> Values and Ethics</label>
@@ -90,6 +87,9 @@
       </section>
     </main>
 
+    <footer class="footer-disclaimer" role="contentinfo">
+      <p>This is an educational study tool and is not affiliated with the ASWB or any licensing board. It does not guarantee a passing score on the LMSW exam. Use official study materials and board resources for exam preparation and eligibility.</p>
+    </footer>
     <script src="questions.js"></script>
     <script src="script.js"></script>
   </body>

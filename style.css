@@ -71,9 +71,15 @@ body {
 }
 
 .start-heading {
-  margin: 0 0 1rem;
+  margin: 0 0 0.5rem;
   font-size: 1.1rem;
   color: var(--blue-dark);
+}
+
+.pool-progress {
+  margin: 0 0 1rem;
+  font-size: 0.9rem;
+  color: var(--gray-muted);
 }
 
 .start-options {
@@ -499,4 +505,21 @@ body {
     justify-content: center;
     flex-wrap: wrap;
   }
+}
+
+.footer-disclaimer {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--gray-border);
+  font-size: 0.8rem;
+  color: var(--gray-muted);
+  text-align: center;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer-disclaimer p {
+  margin: 0;
+  line-height: 1.4;
 }
