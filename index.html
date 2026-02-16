@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>New York LMSW Practice Exam</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container" role="main">
+      <header class="header">
+        <h1>New York LMSW Practice Exam</h1>
+        <p class="subtitle">Master's level • 10 questions per quiz</p>
+      </header>
+
+      <section id="quiz-panel" class="quiz-panel" aria-label="Quiz">
+        <div class="progress-section" aria-live="polite">
+          <p class="progress-text" id="progress-text">Question 1 of 10</p>
+          <div class="progress-bar-wrap" role="presentation">
+            <div class="progress-bar" id="progress-bar" style="width: 10%"></div>
+          </div>
+        </div>
+
+        <div class="question-section">
+          <h2 class="question-number" id="question-number">Q1</h2>
+          <p class="question-text" id="question-text"></p>
+        </div>
+
+        <ul class="answer-list" id="answer-list" role="group" aria-label="Answer choices"></ul>
+
+        <div class="action-row">
+          <button type="button" class="btn btn-hint" id="hint-btn">Hint</button>
+          <button type="button" class="btn btn-primary btn-next" id="next-btn" disabled>
+            Next question
+          </button>
+        </div>
+
+        <div
+          class="rationale-block"
+          id="rationale-block"
+          aria-live="polite"
+          aria-atomic="true"
+          hidden
+        >
+          <h3 class="rationale-heading" id="rationale-heading">Rationale</h3>
+          <p class="rationale-text" id="rationale-text"></p>
+        </div>
+      </section>
+
+      <section id="results-panel" class="results-panel" aria-label="Results" hidden>
+        <h2>Quiz complete</h2>
+        <p class="score-display" id="score-display"></p>
+        <p class="score-message" id="score-message"></p>
+        <button type="button" class="btn btn-primary" id="retake-btn">Retake Quiz</button>
+      </section>
+    </main>
+
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
