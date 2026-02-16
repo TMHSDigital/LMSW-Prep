@@ -1,5 +1,9 @@
 # Contributing to LMSW-Prep
 
+## Pool scaling and UI behavior
+
+The app targets a pool of 500 questions (`POOL_SIZE_TARGET` in `script.js`). The start panel shows "N / 500 questions in pool. Contribute on GitHub." (or "N questions in pool" once the goal is met). The "Questions per round" dropdown is built dynamically: only options that do not exceed the available pool size are shown (5, 10, 15, 20, 25, 30, 40, 50, or "All (N)" when N is not in that list). When the user selects one or two domains, the dropdown reflects the count for that selection so the round size is always valid. Adding questions to `questions.js` increases the pool; no code change is required for the dropdown or progress message.
+
 ## ASWB 2026 alignment
 
 This app uses the three-domain Master's blueprint:
@@ -46,6 +50,12 @@ Prefer **scenario-based** items: a short vignette ending with "What should the s
 ## Analytic rationales
 
 For stronger learning, add `distractorRationales`: an array with one string per choice (same order as `choices`). Use `null` for the correct option. The UI will show "Why the others are wrong" after the main rationale when this field is present.
+
+## Legal and sourcing
+
+- Do not copy or adapt items from ASWB exams or other proprietary tests; avoid "substantially similar" wording. Use original vignettes or material with clear permission (e.g. OER with attribution).
+- When adapting OER (e.g. CC BY-NC-SA), retain required attribution and comply with the license (e.g. share derivatives under the same license, non-commercial).
+- The app footer and README state that this tool is not affiliated with the ASWB or any licensing board and does not guarantee a passing score.
 
 ## Code and PRs
 
