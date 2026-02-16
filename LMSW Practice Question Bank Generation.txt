@@ -1,0 +1,902 @@
+﻿The 2026 ASWB Master’s Examination: A Comprehensive Analysis of Competency Domains and Item Development
+Introduction: The Structural Evolution of Social Work Licensure
+The landscape of social work licensure in North America is undergoing a paradigmatic shift with the introduction of the 2026 Association of Social Work Boards (ASWB) Master’s (LMSW) examination blueprint. This transition, precipitated by the 2024 Analysis of the Practice of Social Work, represents the most significant restructuring of the credentialing process in nearly a decade.1 The revised examination architecture moves away from the previous four-domain model to a consolidated three-domain structure: Values and Ethics, Assessment and Planning, and Intervention and Practice.3 This consolidation is not merely administrative; it reflects a pedagogical evolution within the profession, acknowledging that human development and diversity are not isolated content areas but are inextricably woven into every facet of ethical decision-making and clinical intervention.5
+A critical component of this restructuring is the shift in item methodology. The 2026 blueprint emphasizes "applied knowledge" over the rote recall of isolated facts (previously defined by Knowledge, Skills, and Abilities or KSA statements). The examination now assesses a candidate's ability to synthesize information in real-time, mirroring the complex, non-linear nature of clinical practice.2 Furthermore, the psychometric format has evolved to include a higher proportion of three-option multiple-choice questions. This change is designed to enhance the validity of the assessment by reducing the cognitive load associated with identifying implausible distractors, thereby focusing the candidate's cognitive resources on distinguishing between viable clinical interventions.2
+This report serves as both a theoretical treatise on the new domains and a practical repository of applied knowledge items. It dissects the theoretical underpinnings of the three new domains—incorporating the 2021 NASW Code of Ethics revisions and the DSM-5-TR diagnostic updates—and provides a constructed dataset of 75 practice questions (IDs 26–100) formatted as a JavaScript array. These items are engineered to test the specific competencies outlined in the 2026 blueprint, adhering to the three-option format and the requirement for applied clinical reasoning.
+________________
+Domain I: Values and Ethics (35%)
+The Values and Ethics domain now commands the largest portion of the examination, weighted at 35%.3 This prioritization signals the profession’s renewed commitment to social justice, anti-oppressive practice, and the rigorous management of professional boundaries. The domain requires candidates to navigate the intricate interplay between the NASW Code of Ethics, federal and state laws, and agency policies.
+The 2021 Code of Ethics Revisions: A New Standard of Care
+The 2026 examination is heavily influenced by the 2021 updates to the NASW Code of Ethics, which introduced critical changes regarding Cultural Competence and Professional Self-Care. Understanding these changes is a prerequisite for success on the exam.
+From Competence to Anti-Oppression
+The revision to Standard 1.05 (Cultural Competence) marks a shift from a passive "understanding" of diversity to an active mandate for anti-racist practice. The code now explicitly requires social workers to "demonstrate knowledge that guides practice with clients of various cultures" and, crucially, to "take action against oppression, racism, discrimination, and inequities".6
+In the context of exam items, this shift means that the "correct" answer in a vignette involving a marginalized client is rarely a passive referral. Instead, it often involves the social worker actively acknowledging power differentials, validating the client’s experience of systemic oppression, or adapting interventions to be culturally responsive. The exam tests whether the candidate can identify when a client's "resistance" is actually a protective response to historical trauma or institutional discrimination.7
+Self-Care as an Ethical Imperative
+Previously considered a personal recommendation, professional self-care has been elevated to an ethical standard. The rationale is that "professional demands, challenging workplace climates, and exposure to trauma warrant that social workers maintain personal and professional health" to ensure competent practice.8
+On the exam, this concept appears in scenarios involving burnout, compassion fatigue, or vicarious trauma. Candidates must recognize that working while impaired is a violation of the standard of Competence. Consequently, the correct intervention in such scenarios is often for the social worker to seek supervision, reduce their caseload, or take a leave of absence, rather than "pushing through" which could endanger the client.10
+The Legal-Ethical Hierarchy
+A pervasive theme in this domain is the hierarchy of decision-making when obligations conflict. The exam frequently presents "First/Next" questions where multiple options are valid, but only one is the immediate priority. The generally accepted hierarchy for the ASWB exam is:
+1. Life Safety (Duty to Warn/Protect): The obligation to preserve life (Tarasoff ruling) supersedes confidentiality. If a client presents an imminent danger to self or identifiable others, the social worker must act to protect.11
+2. Legal Mandates (Court Orders/Reporting Laws): A court order (signed by a judge) compels disclosure, whereas a subpoena (signed by a lawyer/clerk) does not. Mandatory reporting of child/elder abuse is a statutory requirement that overrides client privilege.13
+3. Code of Ethics: Principles of confidentiality, self-determination, and conflict of interest govern practice when safety and law are not immediate factors.
+4. Agency Policy: While important, agency policy cannot override ethical or legal mandates.
+Navigating Subpoenas vs. Court Orders
+The distinction between a subpoena and a court order is a high-frequency test item. A subpoena is a discovery tool; upon receipt, the social worker must claim privilege and contact the client. They should not release records immediately. Conversely, a court order allows a judge to determine that the need for information outweighs the need for privacy. Even then, the ethical social worker advocates to limit the scope of the release to the minimum necessary information.14
+Theoretical Application to Practice Items (IDs 26–50)
+The following JavaScript array segment represents 25 items designed to test these ethical nuances. Note the focus on "First/Next" decision-making and the application of the 2021 revisions.
+
+
+JavaScript
+
+
+
+
+// ASWB Master's Exam Practice Questions - Domain I: Values and Ethics
+const domain1Questions =,
+   answer: "A",
+   rationale: "A subpoena is not a court order; it is a request for information. The social worker's ethical duty is to protect client confidentiality (Standard 1.07j). The first step is to assert privilege. Releasing records without consent (B) violates confidentiality. Contacting the judge directly (C) is an ex parte communication and is procedurally incorrect.",
+   hint: "Distinguish between a subpoena (request) and a court order (mandate)."
+ },
+ {
+   id: 27,
+   domain: "Values and Ethics",
+   competency: "Mandatory Reporting",
+   question: "A 35-year-old client discloses during a session that he was physically abused by his stepfather when he was 10 years old. The client states the stepfather is now deceased. The client forbids the social worker from reporting this. How should the social worker proceed?",
+   options:,
+   answer: "B",
+   rationale: "Mandatory reporting laws apply to current suspicion of abuse or neglect of a child. Since the victim is an adult and the perpetrator is deceased (meaning no current children are at risk), the duty to report does not override the client's right to confidentiality. Reporting against the client's wishes (A) would violate self-determination.",
+   hint: "Is there a child currently in danger?"
+ },
+ {
+   id: 28,
+   domain: "Values and Ethics",
+   competency: "Dual Relationships",
+   question: "A social worker in a small rural community realizes that a new referral, a local teacher, is the soccer coach of the social worker's child. Avoiding the professional relationship is not feasible as the social worker is the only provider in the county. What is the BEST way to manage this dual relationship?",
+   options:,
+   answer: "B",
+   rationale: "Standard 1.06(c) acknowledges that dual relationships are sometimes unavoidable, particularly in rural settings. When they cannot be avoided, the ethical obligation is to take steps to protect the client, such as setting clear boundaries and discussing the risks. Ignoring the need for services (A) or altering the child's life (C) creates harm or is impractical.",
+   hint: "If a dual relationship is unavoidable, manage it with transparency and documentation."
+ },
+ {
+   id: 29,
+   domain: "Values and Ethics",
+   competency: "Cultural Competence (Standard 1.05)",
+   question: "A social worker is working with a family from a culture where decision-making is communal and hierarchical. The 22-year-old daughter is the identified client, but her father insists on being present and speaking for her. The daughter appears comfortable with this arrangement. The social worker's ethical obligation is to:",
+   options:,
+   answer: "A",
+   rationale: "Standard 1.05 requires social workers to demonstrate understanding of culture and its function in human behavior. Imposing Western individualistic values (B or C) on a family that operates within a collectivist framework is a form of cultural oppression, provided the client consents and no abuse is suspected.",
+   hint: "Self-determination is defined by the client's values, not the social worker's."
+ },
+ {
+   id: 30,
+   domain: "Values and Ethics",
+   competency: "Termination of Services",
+   question: "A client who has been seeing a social worker in private practice for six months loses their job and can no longer pay the fee. The client is not in crisis. The social worker has offered a sliding scale, but the client still cannot afford it. What is the ethical course of action?",
+   options:,
+   answer: "B",
+   rationale: "Social workers are not required to provide free services indefinitely. Standard 1.16/1.17 permits termination for non-payment if the client is not in crisis and appropriate referral arrangements are made. Billing fraudulently (C) is illegal. Pro bono (A) is voluntary, not mandatory.",
+   hint: "You can terminate for non-payment if you refer and the client is safe."
+ },
+ {
+   id: 31,
+   domain: "Values and Ethics",
+   competency: "Electronic Practice",
+   question: "A social worker receives a friend request on social media from a former client. The therapy ended five years ago on good terms. What is the social worker's MOST appropriate response?",
+   options:,
+   answer: "B",
+   rationale: "Standard 1.06 prohibits social workers from engaging in dual relationships that may exploit clients. While the therapy has ended, social media interaction can blur boundaries and risk confidentiality. Ignoring the request (B) protects the boundary without engaging in a new interaction. Messaging (C) opens a dialogue on a non-secure platform.",
+   hint: "Digital boundaries protect the client's privacy even after termination."
+ },
+ {
+   id: 32,
+   domain: "Values and Ethics",
+   competency: "Self-Determination",
+   question: "A competent elderly client decides to return to his home despite the social worker's assessment that the home is cluttered and potentially unsafe. The client understands the risks but values his independence. The social worker should:",
+   options:,
+   answer: "B",
+   rationale: "Self-determination (Standard 1.02) allows clients to make decisions that the social worker may disagree with, provided the client has capacity and is not an imminent danger to others. The client is competent and aware of risks. Reporting (A) is inappropriate for a competent adult making a lifestyle choice.",
+   hint: "The right to make 'bad' decisions is part of self-determination."
+ },
+ {
+   id: 33,
+   domain: "Values and Ethics",
+   competency: "Informed Consent",
+   question: "A social worker wants to use a new, evidence-based trauma intervention with a client. The intervention involves exposure techniques that may temporarily increase distress. What must the social worker do FIRST?",
+   options:,
+   answer: "A",
+   rationale: "Standard 1.03 (Informed Consent) requires social workers to use clear and understandable language to inform clients of the purpose of the services, risks related to the services, and limits to services. The client must know the risks (increased distress) before agreeing.",
+   hint: "Transparency about risks is legally and ethically required before treatment."
+ },
+ {
+   id: 34,
+   domain: "Values and Ethics",
+   competency: "Professional Competence",
+   question: "A social worker with experience only in adult mental health is asked to provide play therapy for a 6-year-old child. The agency is short-staffed. What is the ethical response?",
+   options:,
+   answer: "B",
+   rationale: "Standard 1.04 (Competence) states social workers should provide services only within the boundaries of their education, training, and experience. Accepting a case without competence harms the client. The worker must either decline/refer or obtain the necessary training/supervision *before* practicing.",
+   hint: "Competence is a prerequisite for practice, not a byproduct of it."
+ },
+ {
+   id: 35,
+   domain: "Values and Ethics",
+   competency: "Impairment of Colleagues",
+   question: "A social worker notices that a colleague appears intoxicated during a staff meeting. This is the first time this has occurred. What is the social worker's ethical obligation?",
+   options:,
+   answer: "B",
+   rationale: "Standard 2.09 (Impairment of Colleagues) outlines a process: first, consult with the colleague directly if feasible and safe. If the colleague refuses help or the impairment interferes with practice, *then* report to the employer or board. Immediate reporting (A) bypasses the collegial step.",
+   hint: "Talk TO the colleague before talking ABOUT them (unless safety is immediate)."
+ },
+ {
+   id: 36,
+   domain: "Values and Ethics",
+   competency: "Access to Records",
+   question: "A client requests access to their case notes. The social worker believes that reading specific details about the diagnosis might be detrimental to the client's progress. What should the social worker do?",
+   options:,
+   answer: "B",
+   rationale: "Standard 1.08 (Access to Records) generally requires social workers to provide access. Limiting access is only permitted in exceptional circumstances where there is compelling evidence of serious harm. The preferred ethical route is to facilitate understanding by reviewing the records together.",
+   hint: "Withholding records is a rare exception, not a clinical strategy."
+ },
+ {
+   id: 37,
+   domain: "Values and Ethics",
+   competency: "Conflicts of Interest (Gifts)",
+   question: "A client presents the social worker with a handmade scarf as a holiday gift. The scarf has sentimental value but low monetary value. The agency has no specific policy on gifts. What should the social worker do?",
+   options:,
+   answer: "B",
+   rationale: "Standard 1.06 (Conflicts of Interest) advises taking into account the cultural context and the monetary value of the gift. Rejecting a small, handmade token can damage the therapeutic alliance. Accepting it is permissible if it doesn't exploit the client or distort boundaries.",
+   hint: "Context matters: A scarf is different from a diamond watch."
+ },
+ {
+   id: 38,
+   domain: "Values and Ethics",
+   competency: "Documentation",
+   question: "A social worker realizes they forgot to document a crisis session that occurred three days ago. How should the note be entered?",
+   options:,
+   answer: "B",
+   rationale: "Legal and ethical standards prohibit falsifying records, which includes backdating (A). The correct procedure is to write the note when remembered, clearly marking it as a late entry for the specific date of service.",
+   hint: "Never lie about the date in a legal document."
+ },
+ {
+   id: 39,
+   domain: "Values and Ethics",
+   competency: "Interruption of Services",
+   question: "A social worker in private practice is unexpectedly hospitalized. She has no professional will or coverage plan. This situation represents a failure in:",
+   options:,
+   answer: "A",
+   rationale: "Standard 1.15 requires social workers to make reasonable efforts to ensure continuity of services in the event of illness, relocation, or death. Failing to have a plan for unexpected absence leaves clients vulnerable.",
+   hint: "Plan for your absence before you are absent."
+ },
+ {
+   id: 40,
+   domain: "Values and Ethics",
+   competency: "Sexual Relationships",
+   question: "A social worker finds themselves physically attracted to a client. The attraction is mutual, but no action has been taken. What is the REQUIRED ethical step?",
+   options:,
+   answer: "B",
+   rationale: "Attraction is a human response; acting on it is an ethical violation. The social worker must seek supervision (B) to ensure the attraction does not impact the work. Terminating *to* date (A) is prohibited (exploitation). Transfer (C) is a last resort if supervision fails.",
+   hint: "Feelings aren't unethical; actions are."
+ },
+ {
+   id: 41,
+   domain: "Values and Ethics",
+   competency: "Bartering",
+   question: "A client who is a professional accountant offers to do the social worker's taxes in exchange for therapy sessions. The client is currently short on cash. What should the social worker consider?",
+   options:,
+   answer: "B",
+   rationale: "Standard 1.13 states bartering is generally discouraged but permissible *only* if four conditions are met: it is not clinically contraindicated, the client is not exploited, the relationship is not distorted, and it is an accepted practice in the local community.",
+   hint: "Bartering is allowed but has a very high bar to clear."
+ },
+ {
+   id: 42,
+   domain: "Values and Ethics",
+   competency: "Research Ethics",
+   question: "A social worker wants to use data from her current caseload for a publication. She de-identifies the data. Does she need informed consent?",
+   options:,
+   answer: "A",
+   rationale: "Standard 5.02 (Evaluation and Research) mandates obtaining voluntary and written informed consent from participants. Clients consent to treatment, not research; a separate consent is required for the latter.",
+   hint: "Treatment consent ≠ Research consent."
+ },
+ {
+   id: 43,
+   domain: "Values and Ethics",
+   competency: "Commitment to Employers",
+   question: "A social worker's agency implements a policy that denies services to undocumented immigrants. The social worker believes this violates the Code of Ethics. What should the social worker do?",
+   options:,
+   answer: "B",
+   rationale: "Standard 3.09 requires social workers to work to improve agency policies. Standard 4.02 forbids practicing discrimination. The worker is obligated to advocate for change. Resignation (C) is a final option, but advocacy is the first step.",
+   hint: "Ethics trump bad agency policy."
+ },
+ {
+   id: 44,
+   domain: "Values and Ethics",
+   competency: "Private Conduct",
+   question: "A social worker posts a racist rant on a public social media profile. The post does not mention any clients. Is this an ethical violation?",
+   options:,
+   answer: "B",
+   rationale: "Standard 4.03 (Private Conduct) states that private conduct is a professional concern if it interferes with the ability to fulfill professional responsibilities. Public racism undermines the social worker's ability to provide non-discriminatory services and damages the profession's integrity.",
+   hint: "Private actions have professional consequences if they erode public trust."
+ },
+ {
+   id: 45,
+   domain: "Values and Ethics",
+   competency: "Deceased Clients",
+   question: "The executor of a deceased client's estate requests the client's therapy records. The social worker has no release on file from the client. What is the correct action?",
+   options:,
+   answer: "B",
+   rationale: "Confidentiality persists after death (Standard 1.07). Unless the executor has specific legal authority under state law to access mental health records (which varies), the social worker should protect the privacy of the deceased until legally compelled.",
+   hint: "Secrets don't die with the client."
+ },
+ {
+   id: 46,
+   domain: "Values and Ethics",
+   competency: "Solicitation",
+   question: "A social worker in private practice hears about a natural disaster in a nearby town. She wants to go to the shelter and hand out her business cards to victims. This is:",
+   options:,
+   answer: "B",
+   rationale: "Standard 4.07 (Solicitations) prohibits soliciting testimonials or business from vulnerable persons who are susceptible to undue influence. This is known as 'ambulance chasing.' She can offer services through relief agencies, but not solicit individuals directly.",
+   hint: "Don't exploit vulnerability for business."
+ },
+ {
+   id: 47,
+   domain: "Values and Ethics",
+   competency: "Payment for Referrals",
+   question: "A social worker refers a client to a psychiatrist. The psychiatrist sends the social worker a $50 'thank you' check for the referral. What should the social worker do?",
+   options:,
+   answer: "B",
+   rationale: "Standard 1.16 prohibits giving or receiving payment for a referral when no professional service is provided. Kickbacks create a conflict of interest where referrals are based on profit rather than client need.",
+   hint: "Referrals are based on need, not profit."
+ },
+ {
+   id: 48,
+   domain: "Values and Ethics",
+   competency: "Billing",
+   question: "A couple requests that the social worker bill their sessions as 'individual therapy' for the wife so their insurance will cover it. The social worker primarily treats the relationship dynamics. What is the ethical response?",
+   options:,
+   answer: "B",
+   rationale: "Standard 3.05 (Billing) requires accurate representation of services provided. Misrepresenting the modality to secure payment is fraud and unethical.",
+   hint: "Don't lie to the insurance company."
+ },
+ {
+   id: 49,
+   domain: "Values and Ethics",
+   competency: "Client Transfer",
+   question: "A client calls a social worker for an appointment but mentions she is currently seeing another therapist for the same issue. She is unhappy with the current therapist but hasn't told them yet. What should the social worker do?",
+   options:,
+   answer: "B",
+   rationale: "While clients have the right to change providers, Standard 2.03 suggests social workers should carefully consider the needs of the client. Seeing two therapists for the same issue can cause conflicting treatment. The ethical step is to discuss the implications and coordinate care if possible.",
+   hint: "Coordinate, don't duplicate."
+ },
+ {
+   id: 50,
+   domain: "Values and Ethics",
+   competency: "Self-Care (Standard)",
+   question: "A social worker is going through a contentious divorce and finds herself crying between sessions. She is finding it hard to concentrate on her clients. According to the 2021 Code revisions, she should:",
+   options:,
+   answer: "B",
+   rationale: "The new purpose section and Ethical Principles emphasize professional self-care. If personal problems interfere with professional effectiveness (Impairment), the social worker must take remedial action (supervision, therapy, reduced load) to prevent harm to clients.",
+   hint: "You cannot pour from an empty cup."
+ }
+];
+
+________________
+Domain II: Assessment and Planning (33%)
+The Assessment and Planning domain focuses on the social worker's ability to gather biopsychosocial data, interpret it through theoretical lenses (Human Development, Systems Theory), and formulate a diagnostic understanding using the DSM-5-TR.
+The Biopsychosocial-Spiritual Assessment
+Assessment in 2026 is viewed through an ecological lens. It is not merely a checklist of symptoms but a dynamic evaluation of the "Person-in-Environment." The exam tests the ability to distinguish between internal pathology and environmental stressors.
+* Biological: Candidates must always rule out medical causes for psychiatric symptoms. For example, sudden onset confusion in an elderly client is Delirium (medical emergency) until proven otherwise, not Dementia.
+* Psychological: Assessment of mental status (MSE), defense mechanisms, and cognitive functioning.
+* Social: Evaluation of support systems using tools like Ecomaps (external systems) and Genograms (intergenerational patterns).
+DSM-5-TR: Critical Updates for the Exam
+The transition to the DSM-5-TR (Text Revision) introduced several changes that are prime targets for exam questions 16:
+Disorder Category
+	Key Diagnostic Nuance
+	Exam Tip
+	Grief
+	Prolonged Grief Disorder: Grief lasting >12 months (adults) causing severe impairment.
+	Replaces the old focus on "bereavement exclusion." Differentiate from normal grieving.
+	Mood
+	Unspecified Mood Disorder: Reinstated for situations where distress is high but criteria aren't fully met.
+	Use when the presentation is ambiguous but requires treatment.
+	Suicide
+	Suicidal Behavior Disorder: Now a codeable condition in Section II.
+	Allows documenting suicide risk independent of a depression diagnosis.
+	Cognitive
+	Stimulant-Induced Mild Neurocognitive Disorder: Cognitive decline due to meth/cocaine use.
+	Differentiate from Alzheimer's; look for substance history.
+	Differential Diagnosis Logic
+The exam assesses the ability to distinguish between "look-alike" disorders based on duration and severity:
+* Schizophrenia Spectrum:
+   * Brief Psychotic Disorder: < 1 month.
+   * Schizophreniform: 1 month to 6 months.
+   * Schizophrenia: > 6 months.
+* Bipolar Spectrum:
+   * Bipolar I: Manic episode (1 week, hospitalization, or severe impairment). Depression not required for diagnosis but usually present.
+   * Bipolar II: Hypomanic episode (4 days, change in functioning, no hospitalization) + Major Depressive Episode.
+   * Cyclothymic: 2 years of sub-threshold ups and downs.
+* Trauma:
+   * Acute Stress Disorder: 3 days to 1 month post-trauma.
+   * PTSD: > 1 month post-trauma.
+Theoretical Application to Practice Items (IDs 51–75)
+
+
+JavaScript
+
+
+
+
+// ASWB Master's Exam Practice Questions - Domain II: Assessment and Planning
+const domain2Questions =,
+   answer: "B",
+   rationale: "The client describes a Hypomanic episode (lasting at least 4 consecutive days, observable change, but NOT severe enough to cause marked impairment or hospitalization). Since she also has a history of depression, Bipolar II is the correct fit. Bipolar I (A) requires a Manic episode (severe impairment or 7+ days).",
+   hint: "Hypomania = 'Hyper' but functional. Mania = Hospital or Disaster."
+ },
+ {
+   id: 52,
+   domain: "Assessment and Planning",
+   competency: "Psychotic Disorders (Duration)",
+   question: "A 20-year-old college student is brought to the health center. He believes the FBI is monitoring his thoughts through the wifi. These symptoms started 3 weeks ago. Before this, he was functioning well. He denies drug use. What is the provisional diagnosis?",
+   options:,
+   answer: "C",
+   rationale: "The key is duration. The symptoms have lasted 3 weeks (< 1 month). Brief Psychotic Disorder lasts 1 day to 1 month with full return to function. Schizophreniform (B) is 1 to 6 months. Schizophrenia (A) is > 6 months.",
+   hint: "Watch the clock: Under 1 month is Brief."
+ },
+ {
+   id: 53,
+   domain: "Assessment and Planning",
+   competency: "Assessment Tools",
+   question: "A social worker suspects a client may have a drinking problem. The client denies it but mentions getting into arguments with his wife about his drinking and feeling bad about it later. Which screening tool is MOST appropriate?",
+   options:,
+   answer: "A",
+   rationale: "The CAGE questionnaire is a quick screen for alcohol use disorder. The client's comments reflect the 'A' (Annoyed by criticism) and 'G' (Guilty) components. BDI (B) is for depression. MMPI (C) is a complex personality inventory.",
+   hint: "CAGE: Cut down, Annoyed, Guilty, Eye-opener."
+ },
+ {
+   id: 54,
+   domain: "Assessment and Planning",
+   competency: "Suicide Risk Assessment",
+   question: "A client states, 'I don't know if I can go on like this.' What is the social worker's FIRST step?",
+   options:,
+   answer: "A",
+   rationale: "When suicide is implied, the social worker must clarify the risk immediately and directly to assess lethality. Ambiguous questions allow the client to evade. You cannot contract for safety (B) or explore depth (C) until you assess the active risk.",
+   hint: "If you smell smoke, ask if there is a fire."
+ },
+ {
+   id: 55,
+   domain: "Assessment and Planning",
+   competency: "Human Development (Erikson)",
+   question: "A 75-year-old client reports feeling like his life has been wasted and he has accomplished nothing of value. According to Erikson, which psychosocial crisis is he experiencing?",
+   options:,
+   answer: "B",
+   rationale: "The final stage of Erikson's model (65+) is Integrity vs. Despair. Success leads to wisdom; failure leads to regret and despair. Generativity (A) is middle adulthood. Intimacy (C) is young adulthood.",
+   hint: "Old age looks back: with a smile (Integrity) or a frown (Despair)."
+ },
+ {
+   id: 56,
+   domain: "Assessment and Planning",
+   competency: "Defense Mechanisms",
+   question: "A client who is angry at his boss comes home and yells at his children for being too loud. What defense mechanism is this?",
+   options:,
+   answer: "B",
+   rationale: "Displacement is shifting impulses (anger) from a threatening object (boss) to a safer target (children). Projection (A) would be accusing the boss of being angry. Reaction Formation (C) would be being overly nice to the boss.",
+   hint: "Kicking the dog because work was hard = Displacement."
+ },
+ {
+   id: 57,
+   domain: "Assessment and Planning",
+   competency: "Neurodevelopmental Disorders",
+   question: "Parents report their 6-year-old child disrupts class, cannot wait his turn, and loses things constantly. He talks excessively and runs around when he should be seated. These behaviors happen at school and home. What is the likely diagnosis?",
+   options:,
+   answer: "B",
+   rationale: "The symptoms describe inattention, hyperactivity, and impulsivity occurring in two settings (home and school), which fits ADHD. Autism (A) involves social communication deficits. ODD (C) involves vindictiveness and defiance, not just hyperactivity.",
+   hint: "ADHD is about regulation of attention and motor skills, not just defiance."
+ },
+ {
+   id: 58,
+   domain: "Assessment and Planning",
+   competency: "Medical Rule-Out (Delirium)",
+   question: "A 65-year-old client presents with sudden onset of confusion, memory loss, and visual hallucinations. The family says he was fine yesterday. What should the social worker assess FIRST?",
+   options:,
+   answer: "A",
+   rationale: "Sudden (acute) onset of confusion and hallucinations suggests Delirium, often caused by infection (UTI) or medication. Dementia (B) is a slow, progressive decline. Medical safety comes first.",
+   hint: "Sudden change in mental status = Medical Emergency."
+ },
+ {
+   id: 59,
+   domain: "Assessment and Planning",
+   competency: "Personality Disorders (Cluster B)",
+   question: "A client has a pattern of unstable relationships, frantic efforts to avoid abandonment, and chronic feelings of emptiness. She often idealizes the social worker one week and devalues them the next. This fits which disorder?",
+   options:,
+   answer: "B",
+   rationale: "Borderline Personality Disorder (BPD) is characterized by instability in mood, self-image, and relationships, splitting (idealization/devaluation), and fear of abandonment. Histrionic (A) is about attention-seeking. Narcissistic (C) lacks the self-harm/abandonment focus.",
+   hint: "I hate you, don't leave me = BPD."
+ },
+ {
+   id: 60,
+   domain: "Assessment and Planning",
+   competency: "Attachment Disorders",
+   question: "A child in foster care rarely seeks comfort when distressed and does not respond when comforted. He is emotionally withdrawn. This behavior is consistent with:",
+   options:,
+   answer: "A",
+   rationale: "RAD is characterized by inhibited, emotionally withdrawn behavior toward caregivers (not seeking comfort) due to pathogenic care. Disinhibited Social Engagement (B) is the opposite—overly familiar with strangers.",
+   hint: "RAD = Withdraws from caregivers."
+ },
+ {
+   id: 61,
+   domain: "Assessment and Planning",
+   competency: "Psychometrics",
+   question: "A social worker is selecting an assessment tool. She wants to ensure that the tool measures what it claims to measure. She is looking for:",
+   options:,
+   answer: "B",
+   rationale: "Validity is accuracy (measuring what it is supposed to, e.g., a depression scale actually measuring depression). Reliability (A) is consistency (getting the same score repeatedly).",
+   hint: "Valid = Truth. Reliable = Consistent."
+ },
+ {
+   id: 62,
+   domain: "Assessment and Planning",
+   competency: "Family Dynamics",
+   question: "A social worker notes that a husband always answers questions directed at his wife. The wife stays silent and looks at the husband before speaking. In structural family therapy, this is an example of:",
+   options:,
+   answer: "A",
+   rationale: "Enmeshment refers to blurred boundaries where autonomy is lost, such as one member speaking for another or feeling the other's feelings. Triangulation (B) involves pulling a third person in.",
+   hint: "If they act like one person instead of two, it's enmeshment."
+ },
+ {
+   id: 63,
+   domain: "Assessment and Planning",
+   competency: "Substance Induced Disorders",
+   question: "A client with a long history of alcohol abuse presents with confusion, ataxia (loss of coordination), and eye movement problems. The social worker should suspect:",
+   options:,
+   answer: "A",
+   rationale: "Wernicke's is an acute, reversible condition caused by Thiamine (B1) deficiency characterized by the triad of confusion, ataxia, and ophthalmoplegia. If untreated, it progresses to Korsakoff's (B), which is chronic memory loss.",
+   hint: "Wernicke's = Wobbly and Wild eyes (Acute)."
+ },
+ {
+   id: 64,
+   domain: "Assessment and Planning",
+   competency: "Group Development (Tuckman)",
+   question: "A therapy group has been meeting for three weeks. Members are starting to criticize the leader and argue about the rules. According to Tuckman, what stage is this?",
+   options:,
+   answer: "B",
+   rationale: "Storming is the stage of conflict, resistance to influence, and jockeying for position. Forming (A) is polite and tentative. Norming (C) is when cohesion develops.",
+   hint: "Conflict is necessary; it's the storm before the calm."
+ },
+ {
+   id: 65,
+   domain: "Assessment and Planning",
+   competency: "Eating Disorders",
+   question: "A 16-year-old female restricts her food intake significantly, has a fear of gaining weight, and has a distorted body image. Her BMI is 16. She stopped menstruating. The diagnosis is:",
+   options:,
+   answer: "B",
+   rationale: "Anorexia Nervosa is defined by restriction of energy intake leading to low body weight, fear of weight gain, and disturbance in self-perception. Bulimia (A) involves bingeing and purging but usually maintains normal weight.",
+   hint: "Low weight + Fear of Fat = Anorexia."
+ },
+ {
+   id: 66,
+   domain: "Assessment and Planning",
+   competency: "Pharmacology (MAOIs)",
+   question: "A client is prescribed a MAOI antidepressant. The social worker must educate the client to avoid foods high in Tyramine, such as:",
+   options:,
+   answer: "B",
+   rationale: "MAOIs interact with Tyramine to cause a hypertensive crisis (stroke risk). Tyramine is found in aged, fermented, or cured foods (cheese, salami, wine).",
+   hint: "MAOI diet = No wine and cheese party."
+ },
+ {
+   id: 67,
+   domain: "Assessment and Planning",
+   competency: "Data Collection Tools",
+   question: "To understand the intergenerational patterns of disease and relationship dynamics in a family, the BEST tool to create is a:",
+   options:,
+   answer: "A",
+   rationale: "A Genogram maps family history, medical issues, and relationships across generations. An Ecomap (B) maps the client's relationship with external systems (school, work, church).",
+   hint: "Genogram = Genes/Generations."
+ },
+ {
+   id: 68,
+   domain: "Assessment and Planning",
+   competency: "OCD vs OCPD",
+   question: "A client spends 3 hours a day checking locks because she fears her family will be murdered if she doesn't. She knows this is irrational but cannot stop. This is:",
+   options:,
+   answer: "A",
+   rationale: "OCD involves intrusive thoughts (obsessions) and ritualistic behaviors (compulsions). The client recognizes it is irrational (ego-dystonic). OCPD (B) is a personality style of perfectionism and control that the client thinks is 'right' (ego-syntonic).",
+   hint: "OCD hurts the client (they want to stop)."
+ },
+ {
+   id: 69,
+   domain: "Assessment and Planning",
+   competency: "Cognitive Development (Piaget)",
+   question: "A child believes that the moon follows him when he walks. According to Piaget, this child is in which stage?",
+   options:,
+   answer: "B",
+   rationale: "The Preoperational stage (ages 2-7) is characterized by egocentrism (seeing the world only from their perspective) and magical thinking. The child believes the world revolves around them.",
+   hint: "Pre-schoolers are Pre-operational and Pretty egocentric."
+ },
+ {
+   id: 70,
+   domain: "Assessment and Planning",
+   competency: "Somatic Disorders",
+   question: "A client presents with paralysis of the arm. Medical tests show no physiological cause. The symptom started after a severe argument with her spouse. This is likely:",
+   options:,
+   answer: "B",
+   rationale: "Conversion Disorder involves altered voluntary motor or sensory function (paralysis, blindness) incompatible with medical conditions, often triggered by psychological stress. It is not 'faking' (Factitious - C).",
+   hint: "Psychological stress 'converts' into physical disability."
+ },
+ {
+   id: 71,
+   domain: "Assessment and Planning",
+   competency: "Problem Formulation",
+   question: "In the first session, the client talks for 20 minutes about various problems. The social worker asks, 'If we could only work on one thing today that would make the biggest difference, what would it be?' This technique is:",
+   options:,
+   answer: "A",
+   rationale: "Partializing is breaking down a complex, overwhelming situation into smaller, manageable parts to prioritize focus. Universalizing (B) is normalizing a feeling.",
+   hint: "Eat the elephant one bite at a time = Partializing."
+ },
+ {
+   id: 72,
+   domain: "Assessment and Planning",
+   competency: "Adjustment Disorder",
+   question: "Three months after moving to a new city, a client reports feeling sad and anxious, affecting her work. She does not meet criteria for Major Depression. The most appropriate diagnosis is:",
+   options:,
+   answer: "B",
+   rationale: "Adjustment Disorders occur within 3 months of a stressor (moving) and involve distress out of proportion or functional impairment. It is the 'common cold' of diagnoses when criteria for stricter disorders aren't met.",
+   hint: "Reaction to a change/stressor = Adjustment."
+ },
+ {
+   id: 73,
+   domain: "Assessment and Planning",
+   competency: "Dissociative Disorders",
+   question: "A client is found wandering in a different city with no memory of his past or identity. This is characteristic of:",
+   options:,
+   answer: "A",
+   rationale: "Dissociative Fugue involves bewildered wandering or travel associated with amnesia for identity. DID (C) involves distinct personalities/alters. Depersonalization (B) is feeling detached from one's body.",
+   hint: "Fugue = Flight (Travel)."
+ },
+ {
+   id: 74,
+   domain: "Assessment and Planning",
+   competency: "Schizoaffective Disorder",
+   question: "To diagnose Schizoaffective Disorder, the client must have:",
+   options:,
+   answer: "A",
+   rationale: "The defining feature of Schizoaffective is that the psychosis (delusions/hallucinations) happens *independent* of the mood for at least 2 weeks. If psychosis only happens *during* depression/mania, it is Mood Disorder with Psychotic Features.",
+   hint: "Schizoaffective is the 'Both/And' disorder, but Psychosis stands alone for 2 weeks."
+ },
+ {
+   id: 75,
+   domain: "Assessment and Planning",
+   competency: "Evaluation Design",
+   question: "A social worker wants to evaluate if a new intervention is causing the desired change in a client. She measures the behavior before the intervention (Baseline) and during the intervention. This is a:",
+   options:,
+   answer: "A",
+   rationale: "Single-Subject Design involves tracking an individual client's progress. 'A' is the baseline, 'B' is the intervention phase. This allows the worker to see if 'B' changed 'A'.",
+   hint: "AB Design: A = As it was, B = Better (hopefully)."
+ }
+];
+
+________________
+Domain III: Intervention and Practice (32%)
+The Intervention and Practice domain covers the implementation of change. The 2026 blueprint emphasizes Evidence-Based Practice (EBP), requiring candidates to "match the model to the problem."
+Matching Intervention Models
+Success in this domain requires knowing which therapy treats which condition best.18
+Problem / Diagnosis
+	Best Indicated Intervention
+	Key Techniques / Keywords
+	Depression / Anxiety
+	Cognitive Behavioral Therapy (CBT)
+	Cognitive restructuring, Socratic questioning, Homework, Automatic thoughts.
+	Borderline Personality / Self-Harm
+	Dialectical Behavior Therapy (DBT)
+	Mindfulness, Distress tolerance, Emotion regulation, Interpersonal effectiveness.
+	Substance Use / Ambivalence
+	Motivational Interviewing (MI)
+	OARS, Rolling with resistance, Developing discrepancy, Stages of Change.
+	Short-term Adjustment
+	Solution-Focused Brief Therapy (SFBT)
+	Miracle Question, Scaling questions, Exceptions, Focus on future/solutions.
+	Trauma (Children)
+	TF-CBT
+	Trauma narrative, Psychoeducation, Parenting skills.
+	Family Hierarchy Issues
+	Structural Family Therapy
+	Enactment, Unbalancing, Boundaries (Rigid vs. Diffuse), Joining.
+	Family Communication/Paradox
+	Strategic Family Therapy
+	Paradoxical directives, Prescribing the symptom, Reframing.
+	Intergenerational Anxiety
+	Bowenian Family Therapy
+	Differentiation of self, Genograms, Triangles, Emotional cutoff.
+	The Stages of Change (Transtheoretical Model)
+Understanding where a client is in the change process is crucial for selecting the right intervention.20
+1. Precontemplation: Denial. "I don't have a problem." (Intervention: Validate, build rapport).
+2. Contemplation: Ambivalence. "I know it's bad, but I like it." (Intervention: MI, weigh pros/cons).
+3. Preparation: Planning. "I bought gym shoes." (Intervention: Develop a concrete plan).
+4. Action: Doing it. "I went to the gym." (Intervention: Support, skill building).
+5. Maintenance: Sustaining. "I've gone for 6 months." (Intervention: Relapse prevention).
+Psychopharmacology for Social Workers
+While social workers do not prescribe, they must recognize side effects and indications.22
+* Lithium: Used for Bipolar. Risk of toxicity (vomiting, tremors). Narrow therapeutic window.
+* MAOIs: Old antidepressants. Dietary restrictions (Tyramine) to prevent stroke.
+* Benzodiazepines (Xanax, Ativan): Anxiety. Highly addictive. Not for long-term use in substance users.
+* Antipsychotics (Haldol, Risperdal): Schizophrenia. Risk of Tardive Dyskinesia (permanent movement disorder) or Neuroleptic Malignant Syndrome (fever/rigidity - emergency).
+Theoretical Application to Practice Items (IDs 76–100+)
+
+
+JavaScript
+
+
+
+
+// ASWB Master's Exam Practice Questions - Domain III: Intervention and Practice
+const domain3Questions =,
+   answer: "A",
+   rationale: "Overgeneralization is taking one negative event (failing a test) and applying it to a general rule (failure at everything). Catastrophizing (B) is expecting the worst possible outcome. Personalization (C) is taking responsibility for external events.",
+   hint: "One bad apple spoils the whole bunch = Overgeneralization."
+ },
+ {
+   id: 77,
+   domain: "Intervention and Practice",
+   competency: "Crisis Intervention",
+   question: "A client calls a crisis hotline stating she has taken a handful of pills. What is the social worker's FIRST action?",
+   options:,
+   answer: "B",
+   rationale: "In a life-threatening emergency, assessment is focused solely on survival. Knowing the substance determines the medical response, and keeping contact is crucial while dispatching help (911). Psychosocial assessment (A) happens *after* she is medically stable.",
+   hint: "Medical safety overrides all therapy."
+ },
+ {
+   id: 78,
+   domain: "Intervention and Practice",
+   competency: "Motivational Interviewing",
+   question: "A client with an alcohol addiction admits his drinking is costing him money but says he needs it to relax. He is unsure if he wants to stop. According to the Stages of Change, he is in:",
+   options:,
+   answer: "B",
+   rationale: "Contemplation is the stage of ambivalence (weighing pros and cons). He sees the problem (cost) but values the behavior (relax). Precontemplation (A) is denial. Preparation (C) is planning to take action.",
+   hint: "Contemplation = Sitting on the fence."
+ },
+ {
+   id: 79,
+   domain: "Intervention and Practice",
+   competency: "Structural Family Therapy",
+   question: "A therapist observes a teenage daughter yelling at the mother while the father laughs. The therapist asks the father to sit next to the mother and support her in setting a rule. This intervention is called:",
+   options:,
+   answer: "A",
+   rationale: "Unbalancing involves the therapist siding with a subsystem (the parents) to realign the hierarchy. By empowering the parents to act together, the therapist restores structural order. Enactment (B) is having them fight so the therapist can see it.",
+   hint: "Structuring the hierarchy = Structural Therapy."
+ },
+ {
+   id: 80,
+   domain: "Intervention and Practice",
+   competency: "Solution-Focused Therapy",
+   question: "A social worker asks a client, 'Suppose tonight, while you slept, a miracle occurred and this problem was solved. When you woke up, what would be the first thing you noticed that was different?' This is:",
+   options:,
+   answer: "A",
+   rationale: "The Miracle Question is the hallmark of SFBT. It helps the client envision a future without the problem, identifying goals. Exception questions (B) ask about times the problem wasn't present.",
+   hint: "SFBT focuses on the Future, not the Past."
+ },
+ {
+   id: 81,
+   domain: "Intervention and Practice",
+   competency: "Group Dynamics (Yalom)",
+   question: "In a group therapy session for grief, a member starts crying. Another member hands her a tissue and says, 'I felt exactly the same way last month.' Yalom would call this curative factor:",
+   options:,
+   answer: "A",
+   rationale: "Universality is the relief of knowing one is not alone in their suffering. 'I felt the same way' validates the shared experience. Altruism (B) is the act of giving help.",
+   hint: "We are in this together = Universality."
+ },
+ {
+   id: 82,
+   domain: "Intervention and Practice",
+   competency: "Macro Practice (Generalist Model)",
+   question: "A community social worker identifies a high rate of asthma in a low-income neighborhood near a factory. The FIRST step in addressing this is to:",
+   options:,
+   answer: "B",
+   rationale: "The Planned Change Process starts with Engagement and Assessment. Before taking action (Protest - A) or implementing solutions (Clinic - C), you must verify and understand the problem through data collection.",
+   hint: "Data before Action."
+ },
+ {
+   id: 83,
+   domain: "Intervention and Practice",
+   competency: "Case Management Roles",
+   question: "A case manager is helping a client with a severe mental illness who is being discharged from the hospital. The client needs housing, medication management, and job training. The case manager's primary role here is:",
+   options:,
+   answer: "A",
+   rationale: "A Broker links clients to needed resources. The primary task described is connecting the client to services. Advocacy (C) is fighting for rights when services are denied.",
+   hint: "Broker = Connector."
+ },
+ {
+   id: 84,
+   domain: "Intervention and Practice",
+   competency: "DBT Indication",
+   question: "Which therapy modality is MOST indicated for a client with a history of non-suicidal self-injury (cutting) and chronic emotional instability?",
+   options:,
+   answer: "B",
+   rationale: "DBT was specifically developed for Borderline Personality Disorder and self-harm. It focuses on replacing maladaptive coping (cutting) with skills (mindfulness, distress tolerance).",
+   hint: "Self-harm/Borderline -> DBT."
+ },
+ {
+   id: 85,
+   domain: "Intervention and Practice",
+   competency: "Strategic Family Therapy",
+   question: "A therapist tells a couple who argues constantly to schedule a fight from 7:00 to 7:15 PM every night. If they are not angry, they must sit in silence. This technique is:",
+   options:,
+   answer: "A",
+   rationale: "Paradoxical Directives ('prescribing the symptom') are used in Strategic Family Therapy to disrupt the involuntary nature of the behavior. By making the fighting a chore, the couple often rebels by *not* fighting.",
+   hint: "Strategic = Manipulating the symptom to make it stop."
+ },
+ {
+   id: 86,
+   domain: "Intervention and Practice",
+   competency: "Evaluation Types",
+   question: "A social worker conducts a satisfaction survey at the end of a group cycle to determine if the program met its goals. This is:",
+   options:,
+   answer: "B",
+   rationale: "Summative Evaluation occurs at the end (Sum) to measure outcomes. Formative (A) happens *during* the process to make improvements along the way.",
+   hint: "Summative = Summary (The End)."
+ },
+ {
+   id: 87,
+   domain: "Intervention and Practice",
+   competency: "Community Organization",
+   question: "In community organizing, 'Locality Development' focuses on:",
+   options:,
+   answer: "B",
+   rationale: "Locality Development emphasizes 'process goals'—building the community's ability to help itself. Social Planning (A) relies on experts. Social Action (C) relies on conflict/protest.",
+   hint: "Locality Development = 'Let's all work together'."
+ },
+ {
+   id: 88,
+   domain: "Intervention and Practice",
+   competency: "Countertransference",
+   question: "A social worker finds himself feeling unusually sleepy and bored whenever a specific client speaks. This is likely an example of:",
+   options:,
+   answer: "B",
+   rationale: "Countertransference is the social worker's emotional reaction to the client. Boredom can be a signal of the client's avoidance or a dynamic the client induces.",
+   hint: "Counter = The Worker's feelings."
+ },
+ {
+   id: 89,
+   domain: "Intervention and Practice",
+   competency: "Pharmacology (Lithium)",
+   question: "A client taking Lithium for Bipolar Disorder reports vomiting, shaky hands, and confusion. The social worker should:",
+   options:,
+   answer: "A",
+   rationale: "These are signs of Lithium Toxicity, which can be fatal. It is a medical emergency. Lithium has a narrow therapeutic window.",
+   hint: "Lithium + Sick = Toxicity (Emergency)."
+ },
+ {
+   id: 90,
+   domain: "Intervention and Practice",
+   competency: "Substance Use (Opioids)",
+   question: "A client addicted to heroin is interested in treatment but fears withdrawal. The social worker should recommend a referral for:",
+   options:,
+   answer: "A",
+   rationale: "The gold standard for Opioid Use Disorder is MAT (Medication-Assisted Treatment) to manage withdrawal and cravings. Abstinence-only (B) has high relapse rates for opioids without medical support.",
+   hint: "Opioids require medical stabilization (MAT)."
+ },
+ {
+   id: 91,
+   domain: "Intervention and Practice",
+   competency: "Termination Dynamics",
+   question: "A client has met all treatment goals. When the social worker brings up termination, the client's symptoms suddenly return. This is known as:",
+   options:,
+   answer: "A",
+   rationale: "Regression is a defense mechanism often seen at termination. The client subconsciously reverts to earlier behavior to avoid the loss of the relationship.",
+   hint: "Termination brings back the ghosts (Regression)."
+ },
+ {
+   id: 92,
+   domain: "Intervention and Practice",
+   competency: "Consultation",
+   question: "A social worker is stuck on a case and talks to a colleague who has no administrative authority over her. This interaction is:",
+   options:,
+   answer: "B",
+   rationale: "Consultation is asking for advice from a peer/expert who has no power to mandate change. Supervision (A) involves administrative authority and liability.",
+   hint: "Peers Consult; Bosses Supervise."
+ },
+ {
+   id: 93,
+   domain: "Intervention and Practice",
+   competency: "DV Safety Planning",
+   question: "In a session with a couple, the wife hints that the husband hit her last night. The husband is present. The social worker should:",
+   options:,
+   answer: "A",
+   rationale: "Safety is paramount. Investigating DV with the abuser present (B) increases the risk of retaliation. The worker must separate them to assess safety securely.",
+   hint: "Never assess DV safety with the abuser in the room."
+ },
+ {
+   id: 94,
+   domain: "Intervention and Practice",
+   competency: "Narrative Therapy",
+   question: "A therapist asks, 'How has Anxiety tried to trick you this week?' asking the client to view Anxiety as a separate character. This is:",
+   options:,
+   answer: "A",
+   rationale: "Externalization is the core technique of Narrative Therapy. It separates the person from the problem ('The problem is the problem, the person is not the problem').",
+   hint: "Make the problem a noun/monster outside the person."
+ },
+ {
+   id: 95,
+   domain: "Intervention and Practice",
+   competency: "Pharmacology (Antipsychotics)",
+   question: "A client on Haldol (antipsychotic) begins smacking his lips and moving his tongue rhythmically. This indicates:",
+   options:,
+   answer: "A",
+   rationale: "Tardive Dyskinesia (TD) involves involuntary movements of the face/mouth/tongue caused by long-term antipsychotic use. It can be permanent.",
+   hint: "Tardive = Late. Dyskinesia = Bad movement."
+ },
+ {
+   id: 96,
+   domain: "Intervention and Practice",
+   competency: "Task-Centered Practice",
+   question: "A client is overwhelmed by eviction, unemployment, and a breakup. The social worker helps the client list the problems and choose two to work on over the next 8 weeks. This approach is:",
+   options:,
+   answer: "A",
+   rationale: "Task-Centered Practice is short-term, highly structured, and problem-solving oriented. It focuses on specific, measurable tasks.",
+   hint: "Lists + Short Term = Task-Centered."
+ },
+ {
+   id: 97,
+   domain: "Intervention and Practice",
+   competency: "Referral (Broker)",
+   question: "A client needs medication but has no insurance. The social worker's role is to:",
+   options:,
+   answer: "A",
+   rationale: "The 'Broker' role involves connecting clients to resources. Paying (B) violates boundaries.",
+   hint: "Connect, don't rescue."
+ },
+ {
+   id: 98,
+   domain: "Intervention and Practice",
+   competency: "Research Methods",
+   question: "A researcher conducts in-depth interviews with 5 trauma survivors to understand their lived experience. This is what type of research?",
+   options:,
+   answer: "A",
+   rationale: "Qualitative research focuses on words, meanings, and experiences (interviews). Quantitative (B) focuses on numbers.",
+   hint: "Qualitative = Quality/Stories. Quantitative = Quantity/Numbers."
+ },
+ {
+   id: 99,
+   domain: "Intervention and Practice",
+   competency: "Record Custodianship",
+   question: "A social worker leaves an agency. Two months later, the agency receives a subpoena for her former client's records. Who is responsible for responding?",
+   options:,
+   answer: "A",
+   rationale: "Records generally belong to the agency/practice, not the individual worker. The agency's records custodian handles the legal request.",
+   hint: "The file cabinet belongs to the agency."
+ },
+ {
+   id: 100,
+   domain: "Intervention and Practice",
+   competency: "Cultural Formulation Interview",
+   question: "Using the DSM-5-TR Cultural Formulation Interview (CFI) helps the social worker:",
+   options:,
+   answer: "A",
+   rationale: "The CFI is designed to assess the client's cultural perception of the problem ('What do you call your problem?' 'What do you think caused it?').",
+   hint: "Ask the client what THEY think is wrong."
+ }
+];
+
+Conclusion
+The 2026 ASWB Master's exam requires a sophisticated understanding of ethics, diagnosis, and intervention. It demands that the social worker not only know the rules but apply them in complex, ambiguous situations. The practice questions provided above act as a simulation of this applied knowledge framework, challenging candidates to move beyond recall and into the realm of professional judgment.
+Works cited
+1. Content outlines - Association of Social Work Boards - ASWB.org, accessed February 15, 2026, https://www.aswb.org/exam/measuring-social-work-competence/content-outlines/
+2. Upcoming Changes to the Social Work Licensing Exams - ASWB.org, accessed February 15, 2026, https://www.aswb.org/upcoming-changes-to-the-social-work-licensing-exams/
+3. 2026 ASWB MSW Exam: Updated Content Outline & Study Tips ..., accessed February 15, 2026, https://www.pocketprep.com/posts/bh-2025-aswb-msw-exam-updated-content-outline-study-tips/
+4. Social Work 2026 Exam Change Overview by Dr. Dawn Apgar - Springer Publishing Blog, accessed February 15, 2026, https://blog.springerpub.com/social-work/2026-social-work-exam-changes/
+5. Blueprints for the 2026 competence assessments reflect significant structural modifications, minor content changes - Association of Social Work Boards - ASWB.org, accessed February 15, 2026, https://www.aswb.org/2026-blueprints/
+6. Highlighted Revisions to the Code of Ethics - NASW, accessed February 15, 2026, https://www.socialworkers.org/About/Ethics/Code-of-Ethics/Highlighted-Revisions-to-the-Code-of-Ethics
+7. NASW Code of Ethics Updates: Cultural Competence - Therapist Development Center, accessed February 15, 2026, https://therapistdevelopmentcenter.com/blog/nasw-code-of-ethics-changes-cultural-competence
+8. Code of Ethics - NASW, accessed February 15, 2026, https://www.socialworkers.org/About/Ethics/Code-of-Ethics
+9. Code of Ethics: English - NASW, accessed February 15, 2026, https://www.socialworkers.org/About/Ethics/Code-of-Ethics/Code-of-Ethics-English
+10. 2021 Revisions to NASW Code of Ethics Take Effect, accessed February 15, 2026, https://www.naswil.org/post/2021-revisions-to-nasw-code-of-ethics-take-effect
+11. Answering "NEXT" Questions on the ASWB Exam - Agents of Change, accessed February 15, 2026, https://agentsofchangeprep.com/blog/answering-next-questions-on-the-aswb-exam/
+12. Confidentiality vs. Mandated Reporting on the ASWB Exam - Agents of Change, accessed February 15, 2026, https://agentsofchangeprep.com/blog/confidentiality-vs-mandated-reporting-on-the-aswb-exam/
+13. Quick Reference Guide for Responding to a Subpoena - naswcanews.org, accessed February 15, 2026, https://naswcanews.org/quick-reference-guide-for-responding-to-a-subpoena/
+14. Law Note: Social Workers and Subpoenas - NASW, accessed February 15, 2026, https://www.socialworkers.org/About/Legal/Law-Notes/Social-Workers-and-Subpoenas
+15. Eye on Ethics: Protecting Client Records - Social Work Today Magazine, accessed February 15, 2026, https://www.socialworktoday.com/archive/Winter23p30.shtml
+16. DSM-5-TR: Rationale, Process, and Overview of Changes | Psychiatric Services, accessed February 15, 2026, https://psychiatryonline.org/doi/full/10.1176/appi.ps.20220334
+17. DSM‐5‐TR: overview of what's new and what's changed - PMC, accessed February 15, 2026, https://pmc.ncbi.nlm.nih.gov/articles/PMC9077590/
+18. Intervention Planning – Preparing for the Masters ASWB Exam, accessed February 15, 2026, https://umsystem.pressbooks.pub/aswbprep/chapter/intervention-planning/
+19. Your Complete Guide To Evidence-Based Social Work Practices in 2025, accessed February 15, 2026, https://www.socialworkportal.com/evidence-based-social-work-practice/
+20. Stages of Change Model - Rural Health Promotion and Disease Prevention Toolkit, accessed February 15, 2026, https://www.ruralhealthinfo.org/toolkits/health-promotion/2/theories-and-models/stages-of-change
+21. Stages of Change Theory - StatPearls - NCBI Bookshelf - NIH, accessed February 15, 2026, https://www.ncbi.nlm.nih.gov/books/NBK556005/
+22. Examination Guidebook - ASWB.org, accessed February 15, 2026, https://www.aswb.org/wp-content/uploads/2025/02/2025-ASWB-Examination-Guidebook-Pearson-VUE.pdf
+23. FREE ASWB Practice Question: Clinical Supervision - Therapist Development Center, accessed February 15, 2026, https://therapistdevelopmentcenter.com/blog/free-aswb-practice-question-clinical-supervision
