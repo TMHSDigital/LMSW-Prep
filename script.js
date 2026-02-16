@@ -34,6 +34,7 @@
   var progressText = document.getElementById("progress-text");
   var progressBar = document.getElementById("progress-bar");
   var questionNumberEl = document.getElementById("question-number");
+  var questionCategoryEl = document.getElementById("question-category");
   var questionTextEl = document.getElementById("question-text");
   var answerList = document.getElementById("answer-list");
   var hintBtn = document.getElementById("hint-btn");
@@ -43,6 +44,7 @@
   var rationaleText = document.getElementById("rationale-text");
   var scoreDisplay = document.getElementById("score-display");
   var scoreMessage = document.getElementById("score-message");
+  var anotherBtn = document.getElementById("another-btn");
   var retakeBtn = document.getElementById("retake-btn");
 
   function initQuiz() {
@@ -81,7 +83,10 @@
     progressBar.style.width = progress + "%";
 
     questionNumberEl.textContent = "Q" + (currentQuestionIndex + 1);
+    questionCategoryEl.textContent = q.category;
     questionTextEl.textContent = q.question;
+
+    nextBtn.textContent = currentQuestionIndex === TOTAL - 1 ? "See results" : "Next question";
 
     answerList.innerHTML = "";
     q.shuffledChoices.forEach(function (choice) {
@@ -177,6 +182,10 @@
     else if (correctCount >= 7) scoreMessage.textContent = "Good job. Review any missed areas.";
     else scoreMessage.textContent = "Consider reviewing the ASWB Master's content areas.";
   }
+
+  anotherBtn.addEventListener("click", function () {
+    initQuiz();
+  });
 
   retakeBtn.addEventListener("click", function () {
     location.reload();

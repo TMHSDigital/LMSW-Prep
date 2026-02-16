@@ -22,7 +22,10 @@
         </div>
 
         <div class="question-section">
-          <h2 class="question-number" id="question-number">Q1</h2>
+          <div class="question-header">
+            <span class="question-number" id="question-number">Q1</span>
+            <span class="question-category" id="question-category"></span>
+          </div>
           <p class="question-text" id="question-text"></p>
         </div>
 
@@ -51,7 +54,10 @@
         <h2>Quiz complete</h2>
         <p class="score-display" id="score-display"></p>
         <p class="score-message" id="score-message"></p>
-        <button type="button" class="btn btn-primary" id="retake-btn">Retake Quiz</button>
+        <div class="results-actions">
+          <button type="button" class="btn btn-primary" id="another-btn">Another 10 questions</button>
+          <button type="button" class="btn btn-secondary" id="retake-btn">Reload page</button>
+        </div>
       </section>
     </main>
 
